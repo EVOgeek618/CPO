@@ -34,4 +34,4 @@ echo $(stat --printf="%n" "$s"|rev|cut -f1 -d /|rev),$w,$(stat --printf="%s,%w,%
 fi
 done)>>./files.xls
 }
-files ~/work
+files .
