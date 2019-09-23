@@ -8,7 +8,7 @@ do
 r=$(expr length "$i")
 d=3
 ras=$(echo "$i"|rev|cut -f1 -d .|rev)
-if [[ $ras == $i ]]; then
+if [[ ".$ras" == "$i" ]]; then
 w=' '
 else
 w=$ras
