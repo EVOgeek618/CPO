@@ -8,5 +8,6 @@ sudo apt install libssl1.0-dev
 sudo apt install nodejs-dev
 sudo apt install node-gyp
 sudo apt install npm
+bower install bower.json
 chmod ugo+rwx ./make_popcorn.sh
 ./make_popcorn.sh
