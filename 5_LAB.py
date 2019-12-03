@@ -32,12 +32,14 @@ for i in list1:
 			for s in range(60):
 				print("\r"+str(s+1), end="")
 				time.sleep(1)
-with open ("TX2.txt","w") as T:
+with open ("TX.txt","w") as T:
 	for j in range(1001):
-		T.write(str(list1[j])+" "+str(TX[j])+"\n")"""
+		T.write(str(list1[j])+" "+str(TX[j])+"\n")
+	T.close()"""
 with open ("TX.txt","r") as T:
 	for j in T.readlines():
 		ETH.append(j[:-1].split(" "))
+	T.close()
 x=[]
 y=[]
 y2=[]
