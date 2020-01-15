@@ -1,4 +1,6 @@
 import os
+import csv
+
 class CarBase:
     def __init__(self, brand, photo_file_name, carrying):
         self.brand = brand
@@ -28,4 +30,16 @@ class SpecMachine(CarBase):
 
 def get_car_list(csv_filename):
     car_list = []
-    return car_list
+    with open(csv_filename) as csv_fd:
+        reader = csv.reader(csv_fd, delimiter=';')
+        next(reader)  # пропускаем заголовок
+        for row in reader:
+            if row[0]=="car":
+                car=Car(row[1],row[3],row[5],row[2])
+            elif row[0]=="track":
+                car=Car(row[1],row[3],row[5],row[4])
+            elif row[0]=="spec_machine":
+                car=Car(row[1],row[3],row[5],row[6])
+            car_list.append(car)
+     return car_list
+    
