@@ -1,6 +1,11 @@
 import json,os
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--key", help="display a square of a given number",type=str)
+parser.add_argument("--val", help="display a square of a given number",type=int)
+args = parser.parse_args()
+arg= [args.key,arg.val]
 arg = input()
-arg=arg.split(" ")
 with open("storage2.data","r") as f:
     if os.stat("storage2.data").st_size == 0:
         dicts={}
